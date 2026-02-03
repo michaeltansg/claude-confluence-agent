@@ -1,0 +1,104 @@
+tests/__init__.py
+  76a54ddae705dd87 1
+tests/test_markdown_generator.py
+  76a54ddae705dd87 1-655
+tests/test_confluence_client.py
+  76a54ddae705dd87 1-473
+tests/test_agent_integration.py
+  76a54ddae705dd87 1-616
+README.md
+  76a54ddae705dd87 3,5-10,18,49-153,155-175,182-198,205-206,208,210-218,221,224,227-230,233-301,303-326
+examples/sample_report.md
+  76a54ddae705dd87 1-146
+tests/conftest.py
+  76a54ddae705dd87 1-382
+docs/SKILL_USAGE.md
+  76a54ddae705dd87 1-343
+tests/test_comment_mapper.py
+  76a54ddae705dd87 1-532
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.42",
+  "base_commit_sha": "eebcf00d324688995948bea7cb86da8a506fdeb3",
+  "prompts": {
+    "76a54ddae705dd87": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5a20d9bd-ff05-4dbf-a9ee-367e83824411",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Michael Tan <tan.michael@mac.com>",
+      "messages": [],
+      "total_additions": 3416,
+      "total_deletions": 16,
+      "accepted_lines": 3414,
+      "overriden_lines": 0
+    },
+    "98b04f12bf448831": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "52f1a4ea-1ca3-4259-9b0a-fe799b89d641",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Michael Tan <tan.michael@mac.com>",
+      "messages": [],
+      "total_additions": 480,
+      "total_deletions": 2,
+      "accepted_lines": 478,
+      "overriden_lines": 0
+    },
+    "c1408500ea442fac": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "18236786-5ed2-4192-b7ee-4bab66dd1470",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Michael Tan <tan.michael@mac.com>",
+      "messages": [],
+      "total_additions": 719,
+      "total_deletions": 0,
+      "accepted_lines": 719,
+      "overriden_lines": 0
+    },
+    "cb2488f2cd40050e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c8b286de-5bb5-488b-80bc-34bd65d94198",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Michael Tan <tan.michael@mac.com>",
+      "messages": [],
+      "total_additions": 970,
+      "total_deletions": 0,
+      "accepted_lines": 970,
+      "overriden_lines": 0
+    },
+    "e4ae13df5fd5ef55": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "416c9bf3-3b31-4acb-b806-3d46afbbc2d3",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Michael Tan <tan.michael@mac.com>",
+      "messages": [],
+      "total_additions": 554,
+      "total_deletions": 0,
+      "accepted_lines": 554,
+      "overriden_lines": 0
+    },
+    "f53e9422894ba7bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "96ded3f4-6f87-4095-bbe5-9089bdab176d",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Michael Tan <tan.michael@mac.com>",
+      "messages": [],
+      "total_additions": 518,
+      "total_deletions": 51,
+      "accepted_lines": 469,
+      "overriden_lines": 0
+    }
+  }
+}
