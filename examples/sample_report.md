@@ -31,40 +31,20 @@
 
 ### Page-Level Comments
 
-**[OPEN]** *sarah.chen@company.com* (2024-01-10T09:15:00Z):
+**[OPEN]** *sarah.chen@company.com* · Jan 10, 2024: Overall this document is well-structured. I have a few inline comments on specific sections that need clarification before we can finalize the requirements.
+  ↳ *mike.johnson@company.com* · Jan 10, 2024: Thanks Sarah! I'll address your comments today.
 
-  Overall this document is well-structured. I have a few inline comments on specific sections that need clarification before we can finalize the requirements.
-
-  - *mike.johnson@company.com* (2024-01-10T10:30:00Z):
-    Thanks Sarah! I'll address your comments today.
-
-**[RESOLVED]** *product.owner@company.com* (2024-01-08T14:00:00Z):
-
-  Approved! This meets all our initial criteria.
+**[RESOLVED]** *product.owner@company.com* · Jan 8, 2024: Approved! This meets all our initial criteria.
 
 ### Inline Comments
 
-#### Paragraph 2
+> ...system shall support up to <mark>10,000 concurrent users</mark> with response times under 200ms...
+**[OPEN]** *infrastructure@company.com* · Jan 11, 2024: This is a significant increase from our current capacity. We need to discuss infrastructure scaling requirements. Can we schedule a meeting?
+  ↳ *architect@company.com* · Jan 11, 2024: I've added a calendar invite for tomorrow. We should also involve the DBA team.
+  ↳ *infrastructure@company.com* · Jan 11, 2024: Perfect, I'll prepare some initial cost estimates.
 
-> The system shall support up to 10,000 concurrent users with response times under 200ms for 95th percentile requests...
-
-**[OPEN]** *infrastructure@company.com* (2024-01-11T11:00:00Z):
-
-  This is a significant increase from our current capacity. We need to discuss infrastructure scaling requirements. Can we schedule a meeting?
-
-  - *architect@company.com* (2024-01-11T14:30:00Z):
-    I've added a calendar invite for tomorrow. We should also involve the DBA team.
-
-  - *infrastructure@company.com* (2024-01-11T15:00:00Z):
-    Perfect, I'll prepare some initial cost estimates.
-
-#### Paragraph 5
-
-> User authentication shall support SSO integration with SAML 2.0 and OAuth 2.0 providers...
-
-**[OPEN]** *security@company.com* (2024-01-12T08:45:00Z):
-
-  Please add MFA as a requirement. This should be mandatory for admin users and optional for regular users.
+> ...authentication shall support <mark>SSO integration with SAML 2.0 and OAuth 2.0</mark> providers...
+**[OPEN]** *security@company.com* · Jan 12, 2024: Please add MFA as a requirement. This should be mandatory for admin users and optional for regular users.
 
 ---
 
@@ -77,33 +57,17 @@
 
 ### Page-Level Comments
 
-**[OPEN]** *api.reviewer@company.com* (2024-01-13T16:00:00Z):
-
-  The API design looks solid. A few suggestions for improvement in the inline comments.
+**[OPEN]** *api.reviewer@company.com* · Jan 13, 2024: The API design looks solid. A few suggestions for improvement in the inline comments.
 
 ### Inline Comments
 
-#### Paragraph 3
+> ...shall return JSON responses with standard HTTP status codes. <mark>Error responses</mark> shall include an error code, message...
+**[RESOLVED]** *frontend.lead@company.com* · Jan 14, 2024: Can we add a `request_id` field to all responses for debugging purposes? This would help us trace issues across services.
+  ↳ *api.lead@company.com* · Jan 14, 2024: Great suggestion! I've updated the spec to include a `request_id` in all response headers.
+  ↳ *frontend.lead@company.com* · Jan 14, 2024: Perfect, thanks!
 
-> All endpoints shall return JSON responses with standard HTTP status codes. Error responses shall include an error code, message, and optional details object...
-
-**[RESOLVED]** *frontend.lead@company.com* (2024-01-14T09:00:00Z):
-
-  Can we add a `request_id` field to all responses for debugging purposes? This would help us trace issues across services.
-
-  - *api.lead@company.com* (2024-01-14T10:15:00Z):
-    Great suggestion! I've updated the spec to include a `request_id` in all response headers.
-
-  - *frontend.lead@company.com* (2024-01-14T10:30:00Z):
-    Perfect, thanks!
-
-#### Paragraph 8
-
-> Rate limiting shall be implemented with a default of 1000 requests per minute per API key...
-
-**[OPEN]** *partner.integration@company.com* (2024-01-14T14:00:00Z):
-
-  Is there a way for enterprise partners to request higher limits? We have some customers with legitimate high-volume use cases.
+> ...<mark>Rate limiting</mark> shall be implemented with a default of 1000 requests per minute per API key...
+**[OPEN]** *partner.integration@company.com* · Jan 14, 2024: Is there a way for enterprise partners to request higher limits? We have some customers with legitimate high-volume use cases.
 
 ---
 
@@ -116,30 +80,16 @@
 
 ### Page-Level Comments
 
-**[OPEN]** *documentation@company.com* (2024-01-15T08:00:00Z):
-
-  The release notes are ready for review. Please check the inline comments for suggested edits.
+**[OPEN]** *documentation@company.com* · Jan 15, 2024: The release notes are ready for review. Please check the inline comments for suggested edits.
 
 ### Inline Comments
 
-#### Paragraph 1
+> ...introduces major performance improvements, including a <mark>40% reduction in API response times</mark> and support for 3x more concurrent users...
+**[OPEN]** *marketing@company.com* · Jan 15, 2024: These numbers are impressive! Can we get supporting benchmark data to include in the marketing materials?
+  ↳ *engineering.lead@company.com* · Jan 15, 2024: I'll prepare a summary of our load testing results. Should have it ready by EOD.
 
-> Version 2.0 introduces major performance improvements, including a 40% reduction in API response times and support for 3x more concurrent users...
-
-**[OPEN]** *marketing@company.com* (2024-01-15T09:30:00Z):
-
-  These numbers are impressive! Can we get supporting benchmark data to include in the marketing materials?
-
-  - *engineering.lead@company.com* (2024-01-15T10:00:00Z):
-    I'll prepare a summary of our load testing results. Should have it ready by EOD.
-
-#### Paragraph 4
-
-> Breaking changes: The deprecated v1 authentication endpoints have been removed. All clients must migrate to the v2 authentication flow...
-
-**[OPEN]** *support.team@company.com* (2024-01-15T11:00:00Z):
-
-  Can we add a link to the migration guide here? Customers will need clear instructions.
+> ...Breaking changes: The deprecated <mark>v1 authentication endpoints have been removed</mark>. All clients must migrate...
+**[OPEN]** *support.team@company.com* · Jan 15, 2024: Can we add a link to the migration guide here? Customers will need clear instructions.
 
 ---
 

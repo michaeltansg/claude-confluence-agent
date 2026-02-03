@@ -257,7 +257,7 @@ class TestPageSectionGeneration:
         section = generator.generate_page_section(sample_page_with_comments)
 
         assert "Inline Comments" in section
-        assert "Paragraph" in section
+        assert ">" in section  # Blockquote for paragraph context
 
     def test_generate_page_section_no_comments(self, generator):
         """Test page section handles pages with no comments."""
@@ -400,7 +400,7 @@ class TestCommentedParagraphFormatting:
 
         result = generator._format_commented_paragraph(cp)
 
-        assert "Paragraph 1" in result
+        assert ">" in result  # Blockquote
         assert "Sample paragraph text" in result
         assert "Comment" in result
 

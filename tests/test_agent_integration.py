@@ -373,9 +373,14 @@ class TestMainFunction:
 
         assert result == 1
 
-    def test_main_returns_error_invalid_args(self):
+    @patch("src.main.load_config")
+    def test_main_returns_error_invalid_args(self, mock_config):
         """Test main returns error for invalid argument combinations."""
-        result = main(["--label", "test"])  # Missing --space
+        # Mock config with no default space
+        mock_config.return_value = MagicMock(
+            confluence=MagicMock(default_space=None),
+        )
+        result = main(["--label", "test"])  # Missing --space and no default
 
         assert result == 1
 
@@ -385,7 +390,8 @@ class TestMainFunction:
         """Test main returns success on valid execution."""
         mock_config.return_value = MagicMock(
             confluence=MagicMock(),
-            anthropic_api_key="key",
+            api_key="key",
+            base_url=None,
             model="claude-sonnet-4-20250514",
             skills_directory="skills",
             allowed_tools=["Read", "Write"],
@@ -487,7 +493,7 @@ class TestReportGeneratorIntegration:
         assert report.startswith("#")  # Starts with header
         assert "##" in report  # Has subheadings
         assert "---" in report  # Has horizontal rules
-        assert report.strip().endswith("\n")  # Properly terminated
+        assert report.endswith("\n")  # Properly terminated
 
     def test_generator_with_multiple_pages_has_toc(self):
         """Test that multi-page report has table of contents."""

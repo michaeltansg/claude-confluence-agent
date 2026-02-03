@@ -43,10 +43,30 @@ This project provides a command-line tool and library for:
    ```
 
 5. Edit `.env` with your credentials:
-   - `CONFLUENCE_DOMAIN`: Your Atlassian domain (e.g., `your-domain.atlassian.net`)
-   - `CONFLUENCE_EMAIL`: Email associated with your Atlassian account
+
+   **Confluence Configuration (Required):**
+   - `CONFLUENCE_BASE_URL`: Your Atlassian URL (e.g., `https://your-domain.atlassian.net`)
+   - `CONFLUENCE_USERNAME`: Email associated with your Atlassian account
    - `CONFLUENCE_API_TOKEN`: Generate at https://id.atlassian.com/manage-profile/security/api-tokens
-   - `ANTHROPIC_API_KEY`: Your Anthropic API key (optional)
+   - `CONFLUENCE_CLOUD`: Set to `true` for Atlassian Cloud (default: `true`)
+   - `CONFLUENCE_DEFAULT_SPACE`: Optional default space key for operations
+
+   **Claude API Configuration (Required for agent mode):**
+
+   Choose ONE of the following options:
+
+   *Option 1: Direct Claude API*
+   - `ANTHROPIC_API_KEY`: Your Anthropic API key
+
+   *Option 2: LiteLLM Proxy*
+   - `ANTHROPIC_BASE_URL`: LiteLLM proxy URL (e.g., `http://localhost:4000/anthropic`)
+   - `ANTHROPIC_AUTH_TOKEN`: Your LiteLLM API key
+
+   **Agent Configuration (Optional):**
+   - `CLAUDE_MODEL`: Model to use (default: `claude-sonnet-4-20250514`)
+   - `SKILLS_DIRECTORY`: Path to skills directory (default: `skills`)
+   - `ALLOWED_TOOLS`: Comma-separated list of allowed tools (default: `Skill,Read,Write,Bash`)
+   - `MAX_TOKENS`: Maximum tokens for responses (default: `4096`)
 
 ## Usage
 
@@ -159,20 +179,16 @@ Example output structure:
 
 ### Page-Level Comments
 
-**[OPEN]** *reviewer@example.com* (2024-01-15T10:00:00Z):
-  This document needs more detail in section 2.
+**[OPEN]** *reviewer@example.com* · Jan 15, 2024: This document needs more detail in section 2.
 
 ### Inline Comments
 
-#### Paragraph 2
-> This paragraph contains the key requirements for the feature...
-
-**[RESOLVED]** *editor@example.com* (2024-01-15T11:00:00Z):
-  Please clarify the acceptance criteria.
-
-  - *author@example.com* (2024-01-15T12:00:00Z):
-    I've updated this section with more details.
+> ...<mark>key requirements for the feature</mark> that must be implemented...
+**[RESOLVED]** *editor@example.com* · Jan 15, 2024: Please clarify the acceptance criteria.
+  ↳ *author@example.com* · Jan 15, 2024: I've updated this section with more details.
 ```
+
+The report highlights the exact text that was commented on using `<mark>` tags, making it easy to see the context.
 
 ## Project Structure
 
@@ -306,7 +322,7 @@ print(generator.stats.total_comments)
 ### Authentication Errors
 
 If you see "Authentication failed" errors:
-1. Verify your `CONFLUENCE_EMAIL` is correct
+1. Verify your `CONFLUENCE_USERNAME` is correct
 2. Generate a new API token at https://id.atlassian.com/manage-profile/security/api-tokens
 3. Ensure the token has appropriate permissions
 

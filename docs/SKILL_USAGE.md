@@ -33,8 +33,8 @@ dependencies:
   - httpx>=0.27.0
   - python-dotenv>=1.0.0
 env_vars:
-  - CONFLUENCE_DOMAIN
-  - CONFLUENCE_EMAIL
+  - CONFLUENCE_BASE_URL
+  - CONFLUENCE_USERNAME
   - CONFLUENCE_API_TOKEN
 ---
 ```
@@ -45,15 +45,42 @@ env_vars:
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `CONFLUENCE_DOMAIN` | Your Atlassian domain | `company.atlassian.net` |
-| `CONFLUENCE_EMAIL` | Email for API authentication | `user@example.com` |
+| `CONFLUENCE_BASE_URL` | Your Atlassian URL | `https://company.atlassian.net` |
+| `CONFLUENCE_USERNAME` | Email for API authentication | `user@example.com` |
 | `CONFLUENCE_API_TOKEN` | API token from Atlassian | `AbCdEf123456...` |
 
 ### Optional Environment Variables
 
 | Variable | Description | Default |
 |----------|-------------|---------|
+| `CONFLUENCE_CLOUD` | Set to `true` for Atlassian Cloud | `true` |
 | `CONFLUENCE_DEFAULT_SPACE` | Default space key | None |
+
+### Claude API Configuration (for agent mode)
+
+Choose ONE of the following options:
+
+**Option 1: Direct Claude API**
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `ANTHROPIC_API_KEY` | Your Anthropic API key | `sk-ant-...` |
+
+**Option 2: LiteLLM Proxy**
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `ANTHROPIC_BASE_URL` | LiteLLM proxy URL | `http://localhost:4000/anthropic` |
+| `ANTHROPIC_AUTH_TOKEN` | Your LiteLLM API key | `your-litellm-api-key` |
+
+### Agent Configuration (Optional)
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `CLAUDE_MODEL` | Claude model to use | `claude-sonnet-4-20250514` |
+| `SKILLS_DIRECTORY` | Path to skills directory | `skills` |
+| `ALLOWED_TOOLS` | Comma-separated allowed tools | `Skill,Read,Write,Bash` |
+| `MAX_TOKENS` | Maximum tokens for responses | `4096` |
 
 ## Using the Skill
 
@@ -185,7 +212,7 @@ Comments that cannot be mapped (e.g., the referenced text was deleted) are colle
 ```python
 # Returns clear error message
 ConfluenceAPIError: Authentication failed (401).
-Please verify your CONFLUENCE_EMAIL and CONFLUENCE_API_TOKEN.
+Please verify your CONFLUENCE_USERNAME and CONFLUENCE_API_TOKEN.
 ```
 
 ### Page Not Found
@@ -282,6 +309,25 @@ The agent will:
 1. Use the skill to fetch the page
 2. Process the comments
 3. Generate the requested summary
+
+### Claude Desktop Usage
+
+To use this skill in Claude Desktop, add the skill directory to your Claude Desktop configuration. Then prompt Claude with natural language requests like:
+
+```
+Fetch all Confluence pages with the "review" label from the AIF space
+and generate a comments report. Save it to comments.md
+```
+
+This is equivalent to running:
+```bash
+python -m src.main --label review --space AIF --output comments.md
+```
+
+Other example prompts:
+- "Get comments from the Confluence page with ID 123456 and summarize the feedback"
+- "Find all pages in the DOCS space that have comments and create a report"
+- "Fetch the page titled 'API Design' from ENGINEERING and list all unresolved comments"
 
 ## Extending the Skill
 

@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c:*)",
+      "Bash(pip install atlassian-python-api python-dotenv httpx pydantic)",
+      "Bash(python -m py_compile:*)",
+      "Bash(ruff check:*)",
+      "Bash(pip install:*)",
+      "Bash(git -C /Users/michaeltan/Documents/repositories/claude-agents log --oneline)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(python -m mypy:*)",
+      "Bash(python3 -m py_compile:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(python -m src.main:*)",
+      "Bash(pytest:*)",
+      "Bash(git -C /Users/michaeltan/Documents/repositories/claude-agents status)",
+      "Bash(git -C /Users/michaeltan/Documents/repositories/claude-agents diff)",
+      "Bash(git -C /Users/michaeltan/Documents/repositories/claude-agents log --oneline -5)",
+      "Bash(git -C /Users/michaeltan/Documents/repositories/claude-agents add:*)",
+      "Bash(git -C /Users/michaeltan/Documents/repositories/claude-agents commit -m \"$(cat <<''EOF''\nUpdate configuration to support multiple auth methods and variable names\n\n- Add support for both new (CONFLUENCE_BASE_URL, CONFLUENCE_USERNAME) and\n  legacy (CONFLUENCE_DOMAIN, CONFLUENCE_EMAIL) environment variable names\n- Support direct Claude API (ANTHROPIC_API_KEY) and LiteLLM proxy\n  (ANTHROPIC_BASE_URL + ANTHROPIC_AUTH_TOKEN) configurations\n- Document all new environment variables in README, SKILL_USAGE, and CLAUDE.md\n- Add VSCode settings to hide __pycache__ directories\n- Update tests to match new config field names\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+    ]
+  }
+}
