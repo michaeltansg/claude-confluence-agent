@@ -1,0 +1,73 @@
+src/main.py
+  d5cd24229dfd400d 46-58
+  544dd990ffec3b61 12,14,29,38-45,90,93-109,115,207,304,309,322-324,327,343,345,347-349,352,354,361-363,368
+src/generators/markdown_generator.py
+  544dd990ffec3b61 11,340,356,367,373,388-404,406-416,418-462,466-467,469-470,473,486-498,503-504,517-518,520-521,542-636
+README.md
+  d5cd24229dfd400d 46-49,51-69,325
+  544dd990ffec3b61 182,186-188,191
+src/confluence/client.py
+  544dd990ffec3b61 368-374
+CLAUDE.md
+  76a54ddae705dd87 1-56,65-81
+  d5cd24229dfd400d 57-64
+docs/SKILL_USAGE.md
+  d5cd24229dfd400d 36-37,48-49,56,59-83,215
+  544dd990ffec3b61 313-331
+tests/test_markdown_generator.py
+  544dd990ffec3b61 260,403
+src/config/agent_config.py
+  d5cd24229dfd400d 23-31,38,42,60-61,70-74,79-82,86,88-90,92-93,95-100,118
+  544dd990ffec3b61 19,34,52
+tests/test_agent_integration.py
+  544dd990ffec3b61 376-377,379-383
+  d5cd24229dfd400d 393-394
+examples/sample_report.md
+  544dd990ffec3b61 34-35,37,41-44,46-47,60,64-67,69-70,83,87-89,91-92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.42",
+  "base_commit_sha": "baa30e590de0ccb7cedfd7ccf6214c8ada6470af",
+  "prompts": {
+    "544dd990ffec3b61": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b32d4a29-0a81-4a8b-880f-f4e939ccdb02",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Michael Tan <tan.michael@mac.com>",
+      "messages": [],
+      "total_additions": 369,
+      "total_deletions": 183,
+      "accepted_lines": 311,
+      "overriden_lines": 0
+    },
+    "76a54ddae705dd87": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5a20d9bd-ff05-4dbf-a9ee-367e83824411",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Michael Tan <tan.michael@mac.com>",
+      "messages": [],
+      "total_additions": 73,
+      "total_deletions": 0,
+      "accepted_lines": 73,
+      "overriden_lines": 0
+    },
+    "d5cd24229dfd400d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0f403699-e3f1-42c3-b19b-9b158e859169",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Michael Tan <tan.michael@mac.com>",
+      "messages": [],
+      "total_additions": 122,
+      "total_deletions": 32,
+      "accepted_lines": 114,
+      "overriden_lines": 0
+    }
+  }
+}
