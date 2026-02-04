@@ -280,6 +280,31 @@ mypy src/
 3. Update documentation if the feature affects user-facing behavior
 4. Run the full test suite before submitting changes
 
+### Publishing to PyPI
+
+1. Update the version in `pyproject.toml`
+
+2. Build the package:
+   ```bash
+   rm -rf dist/ build/ *.egg-info
+   python -m build
+   ```
+
+3. Verify the package:
+   ```bash
+   python -m twine check dist/*
+   ```
+
+4. Upload to TestPyPI (optional, for testing):
+   ```bash
+   python -m twine upload --repository testpypi dist/*
+   ```
+
+5. Upload to PyPI:
+   ```bash
+   python -m twine upload dist/*
+   ```
+
 ## API Reference
 
 ### ConfluenceClient
