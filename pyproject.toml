@@ -3,14 +3,38 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "claude-agents"
+name = "claude-confluence-agent"
 version = "0.1.0"
-description = "Claude Agent SDK with Confluence integration"
+description = "Extract Confluence page comments and generate markdown reports using Claude Agent SDK"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "MIT"}
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    {name = "Michael Tan"}
+]
+keywords = [
+    "confluence",
+    "atlassian",
+    "comments",
+    "markdown",
+    "claude",
+    "agent",
+    "sdk",
+    "automation",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
 dependencies = [
-    "claude-agent-sdk>=0.1.0",
     "atlassian-python-api>=4.0.7",
     "python-dotenv>=1.0.0",
     "httpx>=0.27.0",
@@ -20,13 +44,28 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0.0",
-    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.0.0",
+    "pytest-mock>=3.14.0",
     "ruff>=0.3.0",
     "mypy>=1.8.0",
+    "build>=1.0.0",
+    "twine>=5.0.0",
+]
+agent = [
+    "claude-agent-sdk>=0.1.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/michaeltan/claude-agents"
+Repository = "https://github.com/michaeltan/claude-agents"
+Documentation = "https://github.com/michaeltan/claude-agents#readme"
+Issues = "https://github.com/michaeltan/claude-agents/issues"
+
+[project.scripts]
+confluence-comments = "src.main:cli"
+
 [tool.setuptools.packages.find]
-where = ["src"]
+include = ["src*", "skills*"]
 
 [tool.ruff]
 line-length = 100

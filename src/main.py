@@ -385,5 +385,10 @@ def main(args: Optional[list[str]] = None) -> int:
         return 1
 
 
-if __name__ == "__main__":
+def cli() -> None:
+    """CLI entry point for the console script."""
     sys.exit(main())
+
+
+if __name__ == "__main__":
+    cli()
