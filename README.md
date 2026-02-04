@@ -33,8 +33,8 @@ pip install claude-confluence-agent[dev]
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/michaeltan/claude-agents.git
-   cd claude-agents
+   git clone https://github.com/michaeltansg/claude-confluence-agent.git
+   cd claude-confluence-agent
    ```
 
 2. Create a virtual environment:

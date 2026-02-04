@@ -56,10 +56,10 @@ agent = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/michaeltan/claude-agents"
-Repository = "https://github.com/michaeltan/claude-agents"
-Documentation = "https://github.com/michaeltan/claude-agents#readme"
-Issues = "https://github.com/michaeltan/claude-agents/issues"
+Homepage = "https://github.com/michaeltansg/claude-confluence-agent"
+Repository = "https://github.com/michaeltansg/claude-confluence-agent"
+Documentation = "https://github.com/michaeltansg/claude-confluence-agent#readme"
+Issues = "https://github.com/michaeltansg/claude-confluence-agent/issues"
 
 [project.scripts]
 confluence-comments = "src.main:cli"

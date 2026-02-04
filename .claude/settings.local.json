@@ -24,7 +24,10 @@
       "Bash(python -m twine:*)",
       "Bash(git -C /Users/michaeltan/Documents/repositories/claude-agents diff --stat)",
       "Bash(git -C /Users/michaeltan/Documents/repositories/claude-agents log --oneline -3)",
-      "Bash(git -C /Users/michaeltan/Documents/repositories/claude-agents commit -m \"$(cat <<''EOF''\nPrepare package for PyPI publishing\n\n- Rename package to claude-confluence-agent\n- Add PyPI metadata: classifiers, keywords, URLs, entry points\n- Add LICENSE file (MIT) and MANIFEST.in\n- Add CLI entry point (confluence-comments command)\n- Update README with installation instructions, badges, and quick start\n- Add optional dependencies: [agent] for Claude SDK, [dev] for development\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git -C /Users/michaeltan/Documents/repositories/claude-agents commit -m \"$(cat <<''EOF''\nPrepare package for PyPI publishing\n\n- Rename package to claude-confluence-agent\n- Add PyPI metadata: classifiers, keywords, URLs, entry points\n- Add LICENSE file (MIT) and MANIFEST.in\n- Add CLI entry point (confluence-comments command)\n- Update README with installation instructions, badges, and quick start\n- Add optional dependencies: [agent] for Claude SDK, [dev] for development\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(gh repo create:*)",
+      "Bash(git -C /Users/michaeltan/Documents/repositories/claude-agents commit -m \"$(cat <<''EOF''\nUpdate repository URLs to match GitHub\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git -C /Users/michaeltan/Documents/repositories/claude-agents push)"
     ]
   }
 }
